@@ -1,0 +1,74 @@
+*{
+    nav-right: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    background: #050505;
+}
+.cube{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateX(-30deg) rotateY(360deg);
+
+    }
+}
+.cube div{
+    position: relative;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    
+}
+.cube div span{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#151515,#d515b2);
+    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+}
+.top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: #222;
+    transform: rotateX(90deg) translateZ(-150px);
+}
+.top::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: rgba(210, 37, 202, 0.256);
+    transform: translateZ(-380px);
+    filter: blur(15px);
+    box-shadow: 0 0 120px rgba(206, 12, 206, 0.336),
+    0 0 200px rgba(136, 5, 132, 0.362),
+    0 0 300px rgba(183, 12, 180, 0.6),
+    0 0 400px rgba(172, 19, 206, 0.534),
+    0 0 500px rgb(247, 0, 255);
+
+}
